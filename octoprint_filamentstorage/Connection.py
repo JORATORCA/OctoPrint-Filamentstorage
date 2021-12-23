@@ -178,9 +178,13 @@ class Connection():
 			for port in serial.tools.list_ports.grep('.*0403:6015.*'):
 				self._logger.info("got port %s" % port.device)
 				baselist.append(port.device)
-
-		baselist = baselist + glob.glob('/dev/serial/by-id/*FTDI*') + glob.glob('/dev/*usbserial*') + glob.glob(
-			'/dev/*usbmodem*') + glob.glob('/dev/tty*')
+		
+		baselist = baselist \
+            		+ glob.glob('/dev/serial/by-id/*FTDI*') \
+            		+ glob.glob('/dev/*usbserial*') \
+			+ glob.glob('/dev/*usbmodem*') \
+			+ glob.glob('/dev/tty*')
+		
 		baselist = self.getRealPaths(baselist)
 		# get unique values only
 		baselist = list(set(baselist))
