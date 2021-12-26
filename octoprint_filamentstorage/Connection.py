@@ -56,6 +56,9 @@ class Connection():
 							self._connected = True
 						except serial.SerialException:
 							self.update_ui_error("Connection failed!")
+				else:# DEBUG
+					msg = "YA ESTÁS CONECTADO"
+					self.update_ui_error(msg)
 			if not self._connected:
 				self.update_ui_error("Couldn't connect on any port.")
 		else:
@@ -129,8 +132,7 @@ class Connection():
 			amount += float(match.group(1))
 
 		self.boxExtrusion = (amount - self.boxExtrusionOffset)
-		self._plugin_manager.send_plugin_message(self._identifier,
-												 dict(type="extrusion", data="box=%d" % self.boxExtrusion))
+		self._plugin_manager.send_plugin_message(self._identifier, dict(type="extrusion", data="box=%d" % self.boxExtrusion))
 
 	def monitor_gcode_extrusion(self, amount):
 		self.gCodeExtrusion += float(amount)
