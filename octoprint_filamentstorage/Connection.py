@@ -55,6 +55,9 @@ class Connection():
 							self.startReadThread()
 							self._connected = True
 							self._logger.info("Connected port: %s" % port)
+							msg = "Connected port: %s" % port
+							self.update_ui_error(msg)
+					self.update_ui_error(msg)
 						except serial.SerialException:
 							self.update_ui_error("Connection failed!")
 				else:# DEBUG
