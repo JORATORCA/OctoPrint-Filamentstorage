@@ -51,18 +51,14 @@ class Connection():
 					else:
 						try:
 							self.serialConn = serial.Serial(port, 115200, timeout=0.5)
+							self._logger.info("Connected port: %s" % port)
 							self._logger.info("Starting read thread...")
 							self.startReadThread()
 							self._connected = True
-							self._logger.info("Connected port: %s" % port)
-							msg = "Connected port: %s" % port
-							self.update_ui_error(msg)
-					self.update_ui_error(msg)
 						except serial.SerialException:
 							self.update_ui_error("Connection failed!")
 				else:# DEBUG
-					msg = "YA ESTÁS CONECTADO"
-					self.update_ui_error(msg)
+					self.update_ui_error("YA ESTÁS CONECTADO")
 					
 			if not self._connected:
 				self.update_ui_error("Couldn't connect on any port.")
