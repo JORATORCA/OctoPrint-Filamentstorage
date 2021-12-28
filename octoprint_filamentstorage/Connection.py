@@ -54,12 +54,13 @@ class Connection():
 							self._logger.info("Starting read thread...")
 							self.startReadThread()
 							self._connected = True
+							self._logger.info("Connected port: %s" % port)
 						except serial.SerialException:
 							self.update_ui_error("Connection failed!")
 				else:# DEBUG
 					msg = "YA ESTÁS CONECTADO"
 					self.update_ui_error(msg)
-					self._logger.info("Connected port: %s" % port)
+					
 			if not self._connected:
 				self.update_ui_error("Couldn't connect on any port.")
 		else:
