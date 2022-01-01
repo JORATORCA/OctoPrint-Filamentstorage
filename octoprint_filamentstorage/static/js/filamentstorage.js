@@ -14,7 +14,7 @@ $(function() {
         self.disconnected = ko.observable(true);//añado true
         self.disconnected(true);
         self.heaterPower = ko.observable();
-        self.humidity = ko.observable("0.00%");
+        self.humidity = ko.observable("0.0%");//quito un 0
         self.newMaxH = ko.observable();
         self.newMaxT = ko.observable();
         self.temp = ko.observable();
