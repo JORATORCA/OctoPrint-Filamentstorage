@@ -57,9 +57,6 @@ class Connection():
 							self._connected = True
 						except serial.SerialException:
 							self.update_ui_error("Connection failed!")
-				else:# DEBUG
-					self.update_ui_error("YA ESTÁS CONECTADO")
-					self._logger.info("YA ESTÁS CONECTADO")
 			if not self._connected:
 				self.update_ui_error("Couldn't connect on any port.")
 		else:
