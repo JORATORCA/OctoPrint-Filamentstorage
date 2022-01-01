@@ -11,18 +11,18 @@ $(function() {
         // assign the injected parameters
         self.settings = parameters[0];
 
-        self.disconnected = ko.observable(true);//añado true
+        self.disconnected = ko.observable();
         self.disconnected(true);
         self.heaterPower = ko.observable();
-        self.humidity = ko.observable("0.0%");//quito un 0
+        self.humidity = ko.observable("0.0%");
         self.newMaxH = ko.observable();
         self.newMaxT = ko.observable();
         self.temp = ko.observable();
-        self.w1 = ko.observable(true);//añado true
+        self.w1 = ko.observable();
         self.w2 = ko.observable();
         self.w3 = ko.observable();
         self.w4 = ko.observable();
-        self.l1 = ko.observable(true);//añado true
+        self.l1 = ko.observable();
         self.l2 = ko.observable();
         self.l3 = ko.observable();
         self.l4 = ko.observable();
