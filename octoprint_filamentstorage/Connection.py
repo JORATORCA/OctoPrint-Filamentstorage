@@ -59,6 +59,9 @@ class Connection():
 							self.update_ui_error("Connection failed!")
 			if not self._connected:
 				self.update_ui_error("Couldn't connect on any port.")
+			else:# DEBUG
+				self.update_ui_error("YA ESTÁS CONECTADO")
+				
 		else:
 			msg = "NO SERIAL PORTS FOUND!"
 			self.update_ui_error(msg)
