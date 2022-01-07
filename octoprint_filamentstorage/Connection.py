@@ -152,7 +152,7 @@ class Connection():
 		while self.readThreadStop is False:
 			try:
 				line = serialConnection.readline()
-				self._logger.info("Read Thread line: %s" % line)#debug
+				#self._logger.info("Read Thread line: %s" % line)#debug
 				if line:
 					line = line.strip()
 					if line[:5] == "ERROR":
@@ -162,8 +162,8 @@ class Connection():
 					elif line[:11] == "CALIBRATION":
 						self.update_ui_control(line)
 					else:
-						self.monitor_humidity(line)
-						self.monitor_box_extrusion(line)
+						#self.monitor_humidity(line)
+						#self.monitor_box_extrusion(line)
 						self.update_ui_status(line)
 			except serial.SerialException:
 				self._connected = False
