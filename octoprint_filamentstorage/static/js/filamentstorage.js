@@ -22,16 +22,19 @@ $(function() {
         self.w2 = ko.observable();
         self.w3 = ko.observable();
         self.w4 = ko.observable();
+        self.w5 = ko.observable();
         self.l1 = ko.observable();
         self.l2 = ko.observable();
         self.l3 = ko.observable();
         self.l4 = ko.observable();
+        self.l5 = ko.observable();
         self.errorMsg = ko.observable();
         self.calibrationMsg = ko.observable();
         self.scale1_calibration_value = ko.observable();
         self.scale2_calibration_value = ko.observable();
         self.scale3_calibration_value = ko.observable();
         self.scale4_calibration_value = ko.observable();
+        self.scale5_calibration_value = ko.observable();
         self.gcodeExtrusion = ko.observable();
         self.boxExtrusion = ko.observable();
         self.extrusionMismatch = ko.computed(function(){return self.gcodeExtrusion() - self.boxExtrusion();}, self);
@@ -63,6 +66,10 @@ $(function() {
         self.calibrate4 = function() {
             self.calibrate(4);
         };
+        
+        self.calibrate5 = function() {
+            self.calibrate(5);
+        };
 
         self.calibrate = function(scale) {
             self.errorMsg("");
@@ -85,6 +92,10 @@ $(function() {
         self.tare4 = function() {
             self.tare(4);
         };
+        
+        self.tare5 = function() {
+            self.tare(5);
+        };
 
         self.tare = function(id) {
             self.errorMsg("");
@@ -105,6 +116,10 @@ $(function() {
 
         self.zero4 = function() {
             self.zero(4);
+        };
+        
+        self.zero5 = function() {
+            self.zero(5);
         };
 
         self.zero = function(id) {
@@ -170,6 +185,9 @@ $(function() {
                                 case 'S4':
                                     self.w4(parts[1]);
                                     break;
+                                case 'S5':
+                                    self.w5(parts[1]);
+                                    break;    
                                 case 'L1':
                                     self.l1(parts[1]);
                                     break;
@@ -181,6 +199,9 @@ $(function() {
                                     break;
                                 case 'L4':
                                     self.l4(parts[1]);
+                                    break;
+                                case 'L5':
+                                    self.l5(parts[1]);
                                     break;
                             }
                         });
@@ -213,6 +234,7 @@ $(function() {
                                 self.scale2_calibration_value(vals[1]);
                                 self.scale3_calibration_value(vals[2]);
                                 self.scale4_calibration_value(vals[3]);
+                                self.scale5_calibration_value(vals[4]);
                             }
                         }
                     }
