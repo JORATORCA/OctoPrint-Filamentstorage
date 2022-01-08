@@ -53,11 +53,8 @@
             <td><button class="btn btn-primary" data-bind="click: zero4">{{ _('Zero') }}</button><br/></td>
             <td><button class="btn btn-primary" data-bind="click: zero5">{{ _('Zero') }}</button><br/></td>
         </tr>
-        
-    </table>
-    <table border="1">
         <tr>
-            <th colspan="4">{{ _('Monitor de extrusión') }}</th>
+            <th colspan="5">{{ _('Monitor de extrusión') }}</th>
         </tr>
         <tr>
             <td>{{ _('Gcode') }}: <input class="storage-box-display" disabled="disabled" data-bind="value: gcodeExtrusion"/></td>
@@ -66,7 +63,7 @@
             <td><button class="btn btn-primary" data-bind="click: resetExtMon">{{ _('Reset') }}</button></td>
         </tr>
     </table>
-        
+         
         
     <div>
         {{ _('Mensaje de calibración') }}: <input class="storage-box-display" style="width: 75%" disabled="disabled" data-bind="value: calibrationMsg"/><br/>
