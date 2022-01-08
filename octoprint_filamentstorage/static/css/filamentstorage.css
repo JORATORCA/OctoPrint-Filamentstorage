@@ -4,10 +4,15 @@
 
 .storage-box-display {
     width: 80px;
+    color: black;
+    background-color: white;
     border: none;
+    text-align: right;
 }
 
 .storage-box-error  {
-    width: 80%;
+    width: 100%;
+    color: darkred;
+    background-color: white;
     border: none;
 }
