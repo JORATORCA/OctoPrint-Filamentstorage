@@ -11,11 +11,13 @@ L1_EXPRESSION = ".*L1:+([\\-0-9]+[.]*[0-9]*)mm.*"
 L2_EXPRESSION = ".*L2:+([\\-0-9]+[.]*[0-9]*)mm.*"
 L3_EXPRESSION = ".*L3:+([\\-0-9]+[.]*[0-9]*)mm.*"
 L4_EXPRESSION = ".*L4:+([\\-0-9]+[.]*[0-9]*)mm.*"
+L5_EXPRESSION = ".*L5:+([\\-0-9]+[.]*[0-9]*)mm.*"
 humidityPattern = re.compile(HUMIDITY_EXPRESSION)
 l1Pattern = re.compile(L1_EXPRESSION)
 l2Pattern = re.compile(L2_EXPRESSION)
 l3Pattern = re.compile(L3_EXPRESSION)
 l4Pattern = re.compile(L4_EXPRESSION)
+l5Pattern = re.compile(L5_EXPRESSION)
 
 
 class Connection():
@@ -152,7 +154,6 @@ class Connection():
 		while self.readThreadStop is False:
 			try:
 				line = serialConnection.readline()
-				#self._logger.info("Read Thread line: %s" % line)#debug
 				if line:
 					line = line.strip()
 					if line[:5] == "ERROR":
