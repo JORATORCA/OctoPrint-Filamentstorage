@@ -11,10 +11,10 @@ extrusionPattern = re.compile(EXTRUSION_EXPRESSION)
 
 
 class FilamentstoragePlugin(octoprint.plugin.StartupPlugin,
-							octoprint.plugin.SettingsPlugin,
-							octoprint.plugin.AssetPlugin,
-							octoprint.plugin.SimpleApiPlugin,
-							octoprint.plugin.TemplatePlugin):
+			    octoprint.plugin.SettingsPlugin,
+			    octoprint.plugin.AssetPlugin,
+			    octoprint.plugin.SimpleApiPlugin,
+			    octoprint.plugin.TemplatePlugin):
 
 	# ~~ StartupPlugin mixin
 
