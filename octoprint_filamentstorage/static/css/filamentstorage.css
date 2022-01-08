@@ -4,7 +4,7 @@
 
 .storage-box-display {
     width: 80px;
-    background-color: white !important;
+    background-color:red !important;
     color: black;
     border: none;
 }
