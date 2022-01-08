@@ -56,8 +56,6 @@
         
     </table>
     <table2 border="1">
-    
-    </table2>
         <tr>
             <th colspan="4">{{ _('Monitor de extrusión') }}</th>
         </tr>
@@ -67,6 +65,9 @@
             <td>{{ _('Desajuste') }}: <input class="storage-box-display" disabled="disabled" data-bind="value: extrusionMismatch"/></td>
             <td><button class="btn btn-warning" data-bind="click: resetExtMon">{{ _('Reset') }}</button></td>
         </tr>
+    </table2>
+        
+        
     <div>
         {{ _('Mensaje de calibración') }}: <input class="storage-box-display" style="width: 75%" disabled="disabled" data-bind="value: calibrationMsg"/><br/>
         {{ _('Error') }}: <input class="storage-box-error" disabled="disabled" data-bind="value: errorMsg"/>
