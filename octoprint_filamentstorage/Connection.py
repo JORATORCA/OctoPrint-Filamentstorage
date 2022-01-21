@@ -164,8 +164,8 @@ class Connection():
 						self.update_ui_error("LLEGO LA PALABRA CALIBRATION")
 						self.update_ui_control(line)
 					else:
-						self.monitor_humidity(line)
-						self.monitor_box_extrusion(line)
+						#self.monitor_humidity(line)
+						#self.monitor_box_extrusion(line)
 						self.update_ui_status(line)
 			except serial.SerialException:
 				self._connected = False
