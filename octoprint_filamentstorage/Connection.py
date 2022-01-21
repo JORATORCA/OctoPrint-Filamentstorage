@@ -159,9 +159,11 @@ class Connection():
 					if line[:5] == "ERROR":
 						self.update_ui_error(line)
 					elif line[:6] == "PROMPT":
+						self._logger.info("Read Thread: PROMPT")# DEBUG
 						self.update_ui_prompt(line)
 					elif line[:11] == "CALIBRATION":
-						self.update_ui_error("LLEGO LA PALABRA CALIBRATION")
+						self._logger.info("Read Thread: CALIBRATION")# DEBUG
+						self.update_ui_error("LLEGO LA PALABRA CALIBRATION")# DEBUG
 						self.update_ui_control(line)
 					else:
 						#self.monitor_humidity(line)
