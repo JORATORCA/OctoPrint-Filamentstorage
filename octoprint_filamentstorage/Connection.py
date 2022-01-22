@@ -60,7 +60,7 @@ class Connection():
 						except serial.SerialException:
 							self.update_ui_error("Connection failed!")
 			else:
-				self.update_ui_error("YA ESTÁS CONECTADO")
+				self.update_ui_error("Ya estás conectado!!!")
 				
 		else:
 			msg = "NO SERIAL PORTS FOUND!"
