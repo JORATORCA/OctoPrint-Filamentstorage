@@ -46,8 +46,8 @@ class Connection():
 		self.ports = self.getAllPorts()
 		self._logger.info("Potential ports: %s" % self.ports)
 		if len(self.ports) > 0:
-			for port in self.ports:
-				if not self._connected:
+			if not self._connected:
+				for port in self.ports:
 					if self.isPrinterPort(port):
 						self._logger.info("Skipping Printer Port:" + port)
 					else:
@@ -59,9 +59,7 @@ class Connection():
 							self._connected = True
 						except serial.SerialException:
 							self.update_ui_error("Connection failed!")
-			if not self._connected:
-				self.update_ui_error("Couldn't connect on any port.")
-			else:# DEBUG
+			else:
 				self.update_ui_error("YA ESTÁS CONECTADO")
 				
 		else:
@@ -166,7 +164,7 @@ class Connection():
 						self.update_ui_error("LLEGO LA PALABRA CALIBRATION")# DEBUG
 						self.update_ui_control(line)
 					else:
-						#self.monitor_humidity(line)
+						self.monitor_humidity(line)
 						#self.monitor_box_extrusion(line)
 						self.update_ui_status(line)
 			except serial.SerialException:
@@ -200,7 +198,7 @@ class Connection():
 		return baselist
 
 	def getRealPaths(self, ports):
-		self._logger.info("Paths: %s" % ports)
+		#self._logger.info("Paths: %s" % ports)
 		for index, port in enumerate(ports):
 			port = os.path.realpath(port)
 			ports[index] = port
