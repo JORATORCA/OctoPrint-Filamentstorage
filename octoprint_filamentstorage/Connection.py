@@ -234,9 +234,7 @@ class Connection():
 			)
 			self.readThread.daemon = True
 			self.readThread.start()
-		else:
-			self._logger.info("readTread: %s" % readThread)#DEBUG JRTC	
-	
+			
 	def stopReadThread(self):
 		self.readThreadStop = True
 		if self.readThread and threading.current_thread() != self.readThread:
