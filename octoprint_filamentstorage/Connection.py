@@ -52,7 +52,7 @@ class Connection():
 						self._logger.info("Skipping Printer Port:" + port)
 					else:
 						try:
-							self.serialConn = serial.Serial(port, 115200, timeout=0.3)
+							self.serialConn = serial.Serial(port, 115200, timeout=0.5)
 							self._logger.info("Connected port: %s" % port)
 							self._logger.info("Starting read thread...")
 							self.startReadThread()
