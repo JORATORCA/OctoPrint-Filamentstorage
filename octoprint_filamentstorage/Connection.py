@@ -152,7 +152,7 @@ class Connection():
 		while self.readThreadStop is False:
 			try:
 				line = serialConnection.readline()
-				#self.update_ui_error("Mensaje: %s" % line)#DEBUG
+				self.update_ui_error("Mensaje: %s" % line)#DEBUG
 				if line:
 					line = line.strip()
 					if line[:5] == "ERROR":
@@ -162,7 +162,6 @@ class Connection():
 						self.update_ui_prompt(line)
 					elif line[:11] == "CALIBRATION":
 						self._logger.info("Read Thread: CALIBRATION")# DEBUG
-						self.update_ui_error("LLEGO LA PALABRA CALIBRATION")# DEBUG
 						self.update_ui_control(line)
 					else:
 						#self.monitor_humidity(line)
