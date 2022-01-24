@@ -151,9 +151,9 @@ class Connection():
 		self._logger.info("Read Thread: Starting thread")
 		while self.readThreadStop is False:
 			try:
-				line = serialConnection.readline()
+				line = serialConnection.readline().decode('utf-8').rstrip()
 				if line:
-					line = line.strip()
+					#line = line.strip()
 					self.update_ui_error("Mensaje: %s" % line)#DEBUG
 					self._logger.info("Mensaje: %s" % line)#DEBUG
 					if line[:5] == "ERROR":
