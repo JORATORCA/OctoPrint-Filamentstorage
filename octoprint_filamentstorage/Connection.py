@@ -152,10 +152,10 @@ class Connection():
 		while self.readThreadStop is False:
 			try:
 				line = serialConnection.readline()
-				self.update_ui_error("Mensaje: %s" % line)#DEBUG
-				self._logger.info("Mensaje: %s" % line)#DEBUG
 				if line:
 					line = line.strip()
+					self.update_ui_error("Mensaje: %s" % line)#DEBUG
+					self._logger.info("Mensaje: %s" % line)#DEBUG
 					if line[:5] == "ERROR":
 						self.update_ui_error(line)
 					elif line[:6] == "PROMPT":
