@@ -45,9 +45,9 @@ class Connection():
 
 		self.ports = self.getAllPorts()
 		self._logger.info("Potential ports: %s" % self.ports)
-		if len(self.ports) > 0:
-			if not self._connected:
-				for port in self.ports:
+		if len(self.ports) > 0:	
+			for port in self.ports:
+				if not self._connected:
 					if self.isPrinterPort(port):
 						self._logger.info("Skipping Printer Port:" + port)
 					else:
@@ -59,8 +59,8 @@ class Connection():
 							self._connected = True
 						except serial.SerialException:
 							self.update_ui_error("Connection failed!")
-			else:
-				self.update_ui_error("Ya estás conectado!!!")
+				else:
+					self.update_ui_error("Ya estás conectado!!!")
 				
 		else:
 			msg = "NO SERIAL PORTS FOUND!"
@@ -152,7 +152,7 @@ class Connection():
 		while self.readThreadStop is False:
 			try:
 				line = serialConnection.readline()
-				self.update_ui_error("Mensaje: %s" % line)#DEBUG
+				#self.update_ui_error("Mensaje: %s" % line)#DEBUG
 				if line:
 					line = line.strip()
 					if line[:5] == "ERROR":
