@@ -153,6 +153,7 @@ class Connection():
 			try:
 				line = serialConnection.readline()
 				self.update_ui_error("Mensaje: %s" % line)#DEBUG
+				self._logger.info("Mensaje: %s" % line)#DEBUG
 				if line:
 					line = line.strip()
 					if line[:5] == "ERROR":
